@@ -387,10 +387,10 @@ footer {
 
 @media screen and (max-width: 800px) {
   #firstSec .backDiv #navigation .div2 .homeClick {
-    display: none;
+    /* display: none; */
   }
   #firstSec .backDiv #navigation .div2 .cart {
-    display: none;
+    /* display: none; */
   }
   #firstSec .backDiv #navigation .div2 #burgerBar {
     margin-right: 20px;
