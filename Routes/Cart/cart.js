@@ -30,9 +30,9 @@ fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
   );
 
 function basketCards(item) {
-  return `<tr>
-            <td><button onclick="deleteItem(${item.product.id})" class="deleteBtn"><i class="fa-solid fa-x"></i></button></td>
-            <td><img src="${item.product.image}" alt=""></td>
+  return `<tr class="prodTr">
+            <td class="imageTd"><button onclick="deleteItem(${item.product.id})" class="deleteBtn"><i class="fa-solid fa-x"></i></button></td>
+            <td ><img src="${item.product.image}" alt=""></td>
             <td class="nameTd">${item.product.name}</td>
             <td class="plusBtnClass"><button class="plusBtn" onclick="plus(${item.quantity}, ${item.price}, ${
     item.product.id
@@ -126,20 +126,28 @@ function minus(itemQuant, itemPrice, itemId) {
 
 //total price
 let  table2 = document.getElementById("table2")
-
+let jami = document.getElementById("jami")
 fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
 .then(res => res.json())
 .then(data => {
-  let allPrice = data.map((item) =>  item.price * item.quantity)
-  console.log(allPrice);
-  let sumData = allPrice.reduce( (prev, current) => {
-    console.log(prev, current);
-    return `<p>${prev + current}</p>` 
-    })
-    console.log(sumData);
-    table2.innerHTML += tableInner(item)
-});
+  let allPrice = data.map((item) => item.quantity * item.price);
+  let sumPrice = allPrice.reduce((prev,current) => {
+    return prev + current
+  })
+  
+  jami.innerText +=  sumPrice + "$"
+})
 
-function tableInner(item) {
-  return `<p>111</p>`
-}
+//burger
+let b1 =document.getElementById("b1")
+let b2 =document.getElementById("b2")
+let b3 =document.getElementById("b3")
+let burgerDiv = document.getElementById("burgerDiv");
+let burgerBar = document.getElementById("burgerBar");
+
+burgerBar.addEventListener("click", function() {
+  burgerDiv.classList.toggle("burgerDisplay")
+  b1.classList.toggle("b1rotate")
+  b2.classList.toggle("b2rotate")
+  b3.classList.toggle("b3rotate")
+})

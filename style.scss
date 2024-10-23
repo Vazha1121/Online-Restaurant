@@ -149,11 +149,13 @@
           position: fixed;
           padding-top: 100px;
           top: 0px;
+          right: 0;
+          left: 0;
           display: flex;
-          transform: translateX(2300px);
+          transform: translateX(35300px);
           align-items: start;
           justify-content: center;
-          transition: 0.8s;
+          transition: 1s;
           z-index: 12;
           a{
             color: white;
@@ -170,7 +172,7 @@
           }
         }
         .burgerDisplay {
-          transition: 0.8s;
+          transition: 1s;
           transform: translateX(0px);
         }
         .active {

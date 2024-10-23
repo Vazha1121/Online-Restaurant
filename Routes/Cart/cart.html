@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="cart.css" />
-    <script src="https://kit.fontawesome.com/b18262376d.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b18262376d.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -15,6 +18,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./cart.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -25,7 +36,9 @@
       <div class="backDiv" id="scroll">
         <nav id="navigation" class="navBar">
           <div class="logoDiv">
-            <img src="../../images/Screenshot 2024-10-17 192348.png" alt="" />
+            <a href="../../index.html">
+              <img src="../../images/Screenshot 2024-10-17 192348.png" alt="" />
+            </a>
           </div>
           <div class="div2">
             <div class="homeClick">
@@ -35,10 +48,25 @@
               <a href="./Routes/Cart/cart.html">
                 <ion-icon name="cart-outline"></ion-icon>
               </a>
+              <p class="pCart">cart</p>
+            </div>
+            <div id="burgerBar">
+              <div class="b1" id="b1"></div>
+              <div class="b2" id="b2"></div>
+              <div class="b3" id="b3"></div>
+            </div>
+            <!-- burger Div -->
+            <div class="burgerDiv" id="burgerDiv">
+              <ul id="burgerUl">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../Routes/Cart/cart.html">Cart</a></li>
+                <li>Categories</li>
+              </ul>
             </div>
           </div>
         </nav>
       </div>
+      <!-- fast and efficient -->
       <div class="h1Div">
         <h1>Fast And Efficient, Online Ordering Your Must Try.</h1>
       </div>
@@ -47,20 +75,26 @@
     <!-- section2 -->
     <section id="basketSec">
       <table class="table">
-        <tr>
-            <th></th>
-            <th colspan="2">Product</th>
-            <th>quantity</th>
-            <th>price</th>
-            <th>total</th>
+        <tr class="trTag">
+          <th></th>
+          <th colspan="2">Product</th>
+          <th>quantity</th>
+          <th>price</th>
+          <th>total</th>
         </tr>
         <tbody id="rows"></tbody>
-        
-    </table>
-    <table id="table2">
-      
-      <button>Proceed to Checkout</button>
-    </table>
+      </table>
+      <div id="table2">
+        <div>
+          <h1 id="jami">Total: </h1>
+        <button>Proceed to Checkout</button>
+        </div>
+      </div>
     </section>
+
+    <!-- footer -->
+    <footer>
+      <h4>© Step Ordering 2024, All rights reserved</h4>
+    </footer>
   </body>
 </html>
