@@ -86,13 +86,14 @@ function getCategory(id) {
 }
 
 /* filter */
-
+let rangeValue = document.getElementById("rangeValue");
 let nuts = document.getElementById("nutsCheck");
 let vegs = document.getElementById("vegCheck");
 let filterBtn = document.getElementById("filterBtn");
 let range = document.getElementById("inputRange");
 let spiciness = "";
-console.log(range.value);
+/* rangeValue.innerHTML = range.value; */
+
 filterBtn.addEventListener("click", function () {
   nuts.checked ? (nuts.value = true) : (nuts.value = false);
   vegs.checked ? (vegs.value = true) : (vegs.value = false);
@@ -109,6 +110,9 @@ filterBtn.addEventListener("click", function () {
     );
 });
 
+range.oninput = function() {
+  rangeValue.innerHTML = this.value;
+}
 
 ///add to basket
 
