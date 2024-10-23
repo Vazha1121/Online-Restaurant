@@ -46,13 +46,7 @@ function basketCards(item) {
       }
       let totalDiv = document.getElementById("totalDiv");
 
-      fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
-  .then((bask) => bask.json())
-  .then(baskData => baskData.forEach((item) => totalDiv.innerHTML += total(item))
-  )
-function total(item) {
-  return  `<p>${item.product.price * item.quantity}  </>`
-}
+
 
 
 /* cart item delete */
@@ -127,4 +121,25 @@ function minus(itemQuant, itemPrice, itemId) {
         data.forEach((item) => (tBody.innerHTML += basketCards(item)))
       );
     });
+}
+
+
+//total price
+let  table2 = document.getElementById("table2")
+
+fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+.then(res => res.json())
+.then(data => {
+  let allPrice = data.map((item) =>  item.price * item.quantity)
+  console.log(allPrice);
+  let sumData = allPrice.reduce( (prev, current) => {
+    console.log(prev, current);
+    return `<p>${prev + current}</p>` 
+    })
+    console.log(sumData);
+    table2.innerHTML += tableInner(item)
+});
+
+function tableInner(item) {
+  return `<p>111</p>`
 }

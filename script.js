@@ -43,7 +43,7 @@ let cardDiv = document.getElementById("cards");
 fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
   .then((prod) => prod.json())
   .then((prodData) => {
-    /* console.log(prodData); */
+    console.log(prodData);
     prodData.forEach((item) => (cardDiv.innerHTML += showCards(item)));
     
   });
@@ -52,7 +52,7 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
   return `<div class="everyCard">
             <div class="imgDiv"><img src="${item.image}" alt="" /></div>
             <div class="title"><h1>${item.name}</h1></div>
-            <div class="spicin"><p>Spiciness: ${item.spiciness}</p></div>
+            <div class="spicin"><p>Spiciness: ${range.value}</p></div>
             <div class="checks">
               <div id="nutsDiv">
                 <input type="radio" name="" id="nutsChecked" />
@@ -92,7 +92,7 @@ let vegs = document.getElementById("vegCheck");
 let filterBtn = document.getElementById("filterBtn");
 let range = document.getElementById("inputRange");
 let spiciness = "";
-
+console.log(range.value);
 filterBtn.addEventListener("click", function () {
   nuts.checked ? (nuts.value = true) : (nuts.value = false);
   vegs.checked ? (vegs.value = true) : (vegs.value = false);
