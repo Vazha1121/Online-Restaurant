@@ -18,8 +18,8 @@ window.onscroll = function () {
   scrollFunction();
 };
 
-/* burgeBar */
-let burgerBar = document.getElementById("burgerBar");
+
+
 
 
 /* Categories */
@@ -135,3 +135,17 @@ let basketVar = {
     localStorage.setItem("baskedProd" , prodName)
   })
 }
+
+//burger
+let b1 =document.getElementById("b1")
+let b2 =document.getElementById("b2")
+let b3 =document.getElementById("b3")
+let burgerDiv = document.getElementById("burgerDiv");
+let burgerBar = document.getElementById("burgerBar");
+
+burgerBar.addEventListener("click", function() {
+  burgerDiv.classList.toggle("burgerDisplay")
+  b1.classList.toggle("b1rotate")
+  b2.classList.toggle("b2rotate")
+  b3.classList.toggle("b3rotate")
+})

@@ -71,7 +71,7 @@
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
           }
-          a:after{
+          a:after {
             background-image: url();
           }
           a:hover::before {
@@ -86,7 +86,7 @@
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          .pCart{
+          .pCart {
             font-size: 15px;
             background-color: red;
             width: 40px;
@@ -98,31 +98,82 @@
           a {
             color: white;
           }
-          
         }
-        .cart:hover{
-          a{
+        .cart:hover {
+          a {
             transform: translateX(10px);
             transition: 0.5s;
             color: orange;
           }
         }
-        #burgerBar{
-          width: 30px;
+        #burgerBar {
+          width: 40px;
           height: 25px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           align-items: center;
           display: none;
-          .b1, .b2, .b3{
+          position: relative;
+          z-index: 13;
+          .b1,
+          .b2,
+          .b3 {
             width: 100%;
             height: 5px;
             border-radius: 10px;
             background-color: white;
+            transition: 0.8s;
+          }
+          .b1rotate{
+            margin-top: -1px;
+            transform: translateY(15px);
+            rotate: 45deg;
+            transition: 0.8s;
+          }
+          .b2rotate{
+            opacity: 0;
+          }
+          .b3rotate{
+            transition: 0.8s;
+            transform: translateY(-15px);
+           rotate: -45deg;
+            
           }
         }
-        .active{
+        /* burger Div */
+        .burgerDiv {
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.9);
+          position: fixed;
+          padding-top: 100px;
+          top: 0px;
+          display: flex;
+          transform: translateX(2300px);
+          align-items: start;
+          justify-content: center;
+          transition: 0.8s;
+          z-index: 12;
+          a{
+            color: white;
+            text-decoration: none;
+          }
+          #burgerUl {
+            color: white;
+            list-style: none;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+          }
+        }
+        .burgerDisplay {
+          transition: 0.8s;
+          transform: translateX(0px);
+        }
+        .active {
           background-color: red;
         }
       }
@@ -144,8 +195,10 @@
     justify-content: center;
     font-size: 25px;
     text-align: center;
+    padding-inline: 50px;
   }
 }
+
 /* section2 */
 #sec2 {
   max-width: 2000px;
@@ -421,7 +474,7 @@
           align-items: center;
           justify-content: center;
           gap: 15px;
-        /*  div{
+          /*  div{
           input[type="radio"] + label::before{
             background-position: -416px -5px;
           }
@@ -451,6 +504,8 @@
             height: 40px;
             background-color: inherit;
             border: 5px solid black;
+            position: relative;
+            z-index: -1;
             clip-path: polygon(
               1% 2%,
               3.5% 0.1%,
@@ -565,18 +620,18 @@ footer {
   color: white;
   text-align: center;
 }
-@media screen and (max-width:800px){
-  #firstSec{
-    .backDiv{
-      #navigation{
-        .div2{
-          .homeClick{
-            /* display: none; */
+@media screen and (max-width: 800px) {
+  #firstSec {
+    .backDiv {
+      #navigation {
+        .div2 {
+          .homeClick {
+            display: none;
           }
-          .cart{
-            /* display: none; */
+          .cart {
+            display: none;
           }
-          #burgerBar{
+          #burgerBar {
             margin-right: 20px;
             display: flex;
           }
@@ -584,34 +639,38 @@ footer {
       }
     }
   }
- #sec3{
-  .width1440{
-    align-items: center;
-    flex-direction: column;
-    .filter{
-      width: 500px;
-      margin-bottom: 20px;
-    }
-    .cards{
-      align-items: center;
-      justify-content: center;
-    }
-  }
- }
-}
-@media screen and (max-width:550px){
-  #sec3{
-    .width1440{
+  #sec3 {
+    .width1440 {
       align-items: center;
       flex-direction: column;
-      .filter{
+      .filter {
+        width: 500px;
+        margin-bottom: 20px;
+      }
+      .cards {
+        align-items: center;
+        justify-content: center;
+        
+      }
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  #sec3 {
+    .width1440 {
+      align-items: center;
+      flex-direction: column;
+      .filter {
         width: 90%;
         margin-bottom: 20px;
       }
-      .cards{
+      .cards {
         align-items: center;
         justify-content: center;
+        .everyCard{
+          width: 90%;
+        }
       }
     }
-   }
+  }
 }
