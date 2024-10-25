@@ -55,13 +55,10 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
             <div class="spicin"><p>Spiciness: ${range.value}</p></div>
             <div class="checks">
               <div id="nutsDiv">
-                <input type="radio" name="" id="nutsChecked" />
-                
-                <label for="">Nuts</label>
+                ${item.nuts == true ? '<p>Nuts <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Nuts <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
               </div>
               <div>
-                <input type="radio" name="" id="vegeterianChecked" />
-                <label for="">Vegeterian</label>
+              ${item.vegeterian == true ? '<p>Vegeterian <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Vegeterian <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
               </div>
             </div>
             <div class="priceAdd">
