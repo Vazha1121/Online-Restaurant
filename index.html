@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <script src="./script.js" defer></script>
-    <script src="https://kit.fontawesome.com/b18262376d.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/b18262376d.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -31,14 +34,10 @@
               <a href="./index.html">Home</a>
             </div>
             <div class="cart">
-              
               <a href="./Routes/Cart/cart.html">
-                
                 <ion-icon name="cart-outline"></ion-icon>
               </a>
-              <p class="pCart">
-                cart
-              </p>
+              <p class="pCart">cart</p>
             </div>
             <div id="burgerBar">
               <div class="b1" id="b1"></div>
@@ -46,29 +45,29 @@
               <div class="b3" id="b3"></div>
             </div>
             <!-- burger Div -->
-    <div class="burgerDiv" id="burgerDiv">
-      <ul id="burgerUl">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./Routes/Cart/cart.html">Cart</a></li>
-        <li>Categories</li>
-      </ul>
-     </div>
+            <div class="burgerDiv" id="burgerDiv">
+              <ul id="burgerUl">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Routes/Cart/cart.html">Cart</a></li>
+                <li>Categories</li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
-   <!-- fast and efficient -->
+      <!-- fast and efficient -->
       <div class="h1Div">
         <h1>Fast And Efficient, Online Ordering Your Must Try.</h1>
       </div>
     </section>
-    
+
     <!-- section 2 cards -->
     <section id="sec2" class="section2">
       <div class="categoryDiv">
         <h1>Categories</h1>
         <nav id="category">
           <ul id="catUl">
-            <li><a href="./index.html">All</a></li>
+            <a href="./index.html"><li>All</li></a>
           </ul>
         </nav>
       </div>
@@ -76,22 +75,22 @@
     <!-- filter and cards -->
     <section id="sec3">
       <div class="width1440">
-        <div class="filter" id="filter" >
+        <div class="filter" id="filter">
           <div class="filterIcon">
             <p>Filter</p>
             <i class="fa-solid fa-filter"></i>
           </div>
           <div class="rangeDIv">
             <p>Spiciness: <span id="rangeValue"></span></p>
-            <input type="range" id="inputRange" step="1" min="-1" max="4">
+            <input type="range" id="inputRange" step="1" min="-1" max="4" />
           </div>
           <div class="nutsVegeterien">
             <div class="d1">
-              <input type="checkbox" name="" id="nutsCheck">
+              <input type="checkbox" name="" id="nutsCheck" />
               <label for="checkbox">No Nuts</label>
             </div>
             <div class="d2">
-              <input type="checkbox" name="" id="vegCheck">
+              <input type="checkbox" name="" id="vegCheck" />
               <label for="checkbox">Vegeterian Only</label>
             </div>
           </div>
@@ -100,10 +99,12 @@
           </a>
           <button id="filterBtn">APPLY FILTER</button>
         </div>
-        <div class="cards" id="cards">
-          
-        </div>
+        <div class="cards" id="cards"></div>
       </div>
     </section>
+    <!-- footer -->
+    <footer>
+      <h4>© Step Ordering 2024, All rights reserved</h4>
+    </footer>
   </body>
 </html>

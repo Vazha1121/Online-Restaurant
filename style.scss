@@ -658,7 +658,14 @@ footer {
   }
 }
 @media screen and (max-width: 550px) {
+  #firstSec{
+    .h1Div{
+      font-size: 22px;
+      padding-top: 60px;
+    }
+  }
   #sec3 {
+    
     .width1440 {
       align-items: center;
       flex-direction: column;
@@ -671,6 +678,12 @@ footer {
         justify-content: center;
         .everyCard{
           width: 90%;
+          .imgDiv{
+            height: 450px;
+            img{
+              height: 350px;
+            }
+          }
         }
       }
     }

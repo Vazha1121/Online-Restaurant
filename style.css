@@ -481,6 +481,10 @@ footer {
   }
 }
 @media screen and (max-width: 550px) {
+  #firstSec .h1Div {
+    font-size: 22px;
+    padding-top: 60px;
+  }
   #sec3 .width1440 {
     align-items: center;
     flex-direction: column;
@@ -495,5 +499,11 @@ footer {
   }
   #sec3 .width1440 .cards .everyCard {
     width: 90%;
+  }
+  #sec3 .width1440 .cards .everyCard .imgDiv {
+    height: 450px;
+  }
+  #sec3 .width1440 .cards .everyCard .imgDiv img {
+    height: 350px;
   }
 }/*# sourceMappingURL=style.css.map */

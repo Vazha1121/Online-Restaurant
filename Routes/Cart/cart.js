@@ -40,7 +40,7 @@ function basketCards(item) {
     item.price
   },${item.product.id})">-</button></td>
             <td>${item.price}$</td>
-            <td>${item.price * item.quantity}$</td>
+            <td class="priceTr">${item.price * item.quantity}$</td>
          </tr>
         `;
       }

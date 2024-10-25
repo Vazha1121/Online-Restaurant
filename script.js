@@ -52,13 +52,13 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
   return `<div class="everyCard">
             <div class="imgDiv"><img src="${item.image}" alt="" /></div>
             <div class="title"><h1>${item.name}</h1></div>
-            <div class="spicin"><p>Spiciness: ${range.value}</p></div>
+            <div class="spicin"><p>Spiciness: ${item.spiciness}</p></div>
             <div class="checks">
               <div id="nutsDiv">
-                ${item.nuts == true ? '<p>Nuts <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Nuts <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
+                ${item.nuts === true ? '<p>Nuts <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Nuts <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
               </div>
               <div>
-              ${item.vegeterian == true ? '<p>Vegeterian <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Vegeterian <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
+              ${item.vegeterian === true ? '<p>Vegeterian <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Vegeterian <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
               </div>
             </div>
             <div class="priceAdd">
@@ -92,8 +92,8 @@ let spiciness = "";
 /* rangeValue.innerHTML = range.value; */
 
 filterBtn.addEventListener("click", function () {
-  nuts.checked ? (nuts.value = true) : (nuts.value = false);
-  vegs.checked ? (vegs.value = true) : (vegs.value = false);
+  nuts.checked ? (nuts.value = false) : (nuts.value = true);
+  vegs.checked ? (vegs.value = true, nuts.value = false) : (vegs.value = false, nuts.value = " ");
   range.value !== -1 ? (spiciness = range.value) : (spiciness = "");
   cardDiv.innerHTML = " ";
   fetch(

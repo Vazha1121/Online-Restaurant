@@ -1,9 +1,9 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  @import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
 
 * {
   margin: 0;
@@ -130,20 +130,19 @@
             background-color: white;
             transition: 0.8s;
           }
-          .b1rotate{
+          .b1rotate {
             margin-top: -1px;
             transform: translateY(15px);
             rotate: 45deg;
             transition: 0.8s;
           }
-          .b2rotate{
+          .b2rotate {
             opacity: 0;
           }
-          .b3rotate{
+          .b3rotate {
             transition: 0.8s;
             transform: translateY(-15px);
-           rotate: -45deg;
-            
+            rotate: -45deg;
           }
         }
         /* burger Div */
@@ -162,7 +161,7 @@
           justify-content: center;
           transition: 1s;
           z-index: 12;
-          a{
+          a {
             color: white;
             text-decoration: none;
           }
@@ -205,77 +204,100 @@
     padding-inline: 50px;
   }
 }
-
-  /* section2 */
-
-
-  #basketSec{
-    max-width: 2000px;
+/* homeToCart */
+.homeToCart{
+  max-width: 2000px;
+  width: 100%;
+  margin: auto;
+  height: 50px;
+  background-color: red;
+  .htcDiv{
+    max-width: 1440px;
+    height: 50px;
     margin: auto;
-    width: 100%;
-    /* display: flex; */
-    flex-wrap: wrap;
-    .table{
-      max-width: 1440px;
-      width: 100%;
-      margin: auto;
-      img{
-
-        width: 100px;
-        height: 100px;
-      }
-      #rows{
-        max-width: 1440px;
-        margin: auto;
-        align-items: center;
-        .deleteBtn{
-          background-color: none;
-          border: none;
-        }
-        .plusBtnClass{
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          border: none;
-        }
-        .plusBtn{
-          width: 20px;
-          height: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-        }
-      }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    a{
+      text-decoration: none;
+      color: whitesmoke;
     }
-    #table2{
-      max-width: 2000px;
-      width: 100%;
+    a:hover{
+      text-decoration: underline 2px orange;
+    }
+    span{
+      transform: translateY(2px);
+    }
+  }
+}
+/* section2 */
+
+#basketSec {
+  max-width: 2000px;
+  margin: auto;
+  width: 100%;
+  /* display: flex; */
+  flex-wrap: wrap;
+  .table {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    #rows {
+      max-width: 1440px;
       margin: auto;
-      height: 200px;
-      div{
-        max-width: 1440px;
-        margin: auto;
-        width: 100%;
+      align-items: center;
+      .plusBtnClass {
         display: flex;
-        flex-direction: column;
-        align-items: end;
-        color: rgb(0, 0, 0);
-        button{
-          width: 285px;
-          height: 50px;
-          border: none;
-          background-color: red;
-          font-weight: 600;
-          transition: 0.7s;
-          cursor: pointer;
-        }
-        button:hover{
-          background-color: yellow;
-        }
+        align-items: center;
+        gap: 5px;
+        border: none;
+      }
+      button {
+        color: red;
+        font-size: 25px;
+        background-color: inherit;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }
+  #table2 {
+    max-width: 2000px;
+    width: 100%;
+    margin: 50px auto;
+    height: 200px;
+    div {
+      max-width: 1440px;
+      margin: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      color: rgb(0, 0, 0);
+      button {
+        width: 285px;
+        height: 50px;
+        border: none;
+        background-color: red;
+        font-weight: 600;
+        transition: 0.7s;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: yellow;
+        transform: scale(1.1);
+        box-shadow: 0px 0px 15px 1px;
+      }
+    }
+  }
+}
 /* footer */
 
 footer {
@@ -293,68 +315,70 @@ footer {
   position: relative;
   bottom: 0;
 }
-  @media screen and (max-width: 800px) {
-    #firstSec {
-      .backDiv {
-        #navigation {
-          .div2 {
-            .homeClick {
-              display: none;
-            }
-            .cart {
-              display: none;
-            }
-            #burgerBar {
-              margin-right: 20px;
-              display: flex;
-            }
+@media screen and (max-width: 800px) {
+  #firstSec {
+    .backDiv {
+      #navigation {
+        .div2 {
+          .homeClick {
+            display: none;
+          }
+          .cart {
+            display: none;
+          }
+          #burgerBar {
+            margin-right: 20px;
+            display: flex;
           }
         }
       }
     }
   }
+}
 
-
-@media screen and (max-width:500px){
-  #basketSec{
+@media screen and (max-width: 500px) {
+  #basketSec {
     width: 100%;
-    .table{
+    .table {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
 
-      .trTag{
+      .trTag {
         display: none;
       }
-      #rows{
+      #rows {
         gap: 10px;
-        .prodTr{
+
+        .prodTr {
           margin: 10px;
-          td{
+
+          td {
             display: flex;
             border-inline: 1px solid black;
             /* flex-direction: column; */
             align-items: center;
             justify-content: center;
           }
-          .imageTd{
+          .imageTd {
             border-top: 1px solid black;
+          }
+          .priceTr {
+            border-bottom: 1px solid black;
           }
         }
       }
     }
-    #table2{
-      div{
+    #table2 {
+      div {
         transition: 0.5s;
         align-items: center;
       }
     }
-
   }
-  footer{
+  footer {
     padding-inline: 20px;
   }
 }
-  
