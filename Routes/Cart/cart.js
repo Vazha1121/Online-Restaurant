@@ -6,8 +6,8 @@ let tBody = document.getElementById("rows");
 /* scroll effect */
 function scrollFunction() {
   if (
-    document.documentElement.scrollTop >= 100 &&
-    document.documentElement.scrollTop <= 4000
+    document.documentElement.scrollTop >= 10 &&
+    document.documentElement.scrollTop <= 14000
   ) {
     scrolled.classList.add("scrolled");
   } else {
