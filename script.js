@@ -89,10 +89,12 @@ let vegs = document.getElementById("vegCheck");
 let filterBtn = document.getElementById("filterBtn");
 let range = document.getElementById("inputRange");
 let spiciness = "";
+let reset = document.getElementById("reset");
+let fiterReset = document.getElementById("")
 /* rangeValue.innerHTML = range.value; */
 
 filterBtn.addEventListener("click", function () {
-  nuts.checked ? (nuts.value = false) : (nuts.value = true);
+  nuts.checked ? (nuts.value = false) : (nuts.value = " ");
   vegs.checked ? (vegs.value = true, nuts.value = false) : (vegs.value = false, nuts.value = " ");
   range.value !== -1 ? (spiciness = range.value) : (spiciness = "");
   cardDiv.innerHTML = " ";
