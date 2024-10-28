@@ -1,7 +1,6 @@
 let scrolled = document.getElementById("scroll");
 let body = document.querySelector("body");
 
-
 /* scroll effect */
 function scrollFunction() {
   if (
@@ -17,10 +16,6 @@ function scrollFunction() {
 window.onscroll = function () {
   scrollFunction();
 };
-
-
-
-
 
 /* Categories */
 
@@ -45,29 +40,36 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
   .then((prodData) => {
     console.log(prodData);
     prodData.forEach((item) => (cardDiv.innerHTML += showCards(item)));
-    
   });
-  function showCards(item) {
-
+function showCards(item) {
   return `<div class="everyCard">
             <div class="imgDiv"><img src="${item.image}" alt="" /></div>
             <div class="title"><h1>${item.name}</h1></div>
             <div class="spicin"><p>Spiciness: ${item.spiciness}</p></div>
             <div class="checks">
               <div id="nutsDiv">
-                ${item.nuts === true ? '<p>Nuts <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Nuts <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
+                ${
+                  item.nuts === true
+                    ? '<p>Nuts <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>'
+                    : '<p>Nuts <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'
+                }
               </div>
               <div>
-              ${item.vegeterian === true ? '<p>Vegeterian <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>' : '<p>Vegeterian <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'}
+              ${
+                item.vegeterian === true
+                  ? '<p>Vegeterian <i class="fa-solid fa-check" style="color: #ff0000;"></i></p>'
+                  : '<p>Vegeterian <i class="fa-solid fa-x" style="color: #ff0000;"></i></p>'
+              }
               </div>
             </div>
             <div class="priceAdd">
               <div><h1>${item.price}$</h1></div>
-              <div onclick="addBasket(${item.id}, ${item.price} , '${item.name}')"><button>Add to cart</button></div>
+              <div onclick="addBasket(${item.id}, ${item.price} , '${
+    item.name
+  }')"><button>Add to cart</button></div>
             </div>
           </div>`;
-        }
-
+}
 
 //get category func
 
@@ -90,12 +92,14 @@ let filterBtn = document.getElementById("filterBtn");
 let range = document.getElementById("inputRange");
 let spiciness = "";
 let reset = document.getElementById("reset");
-let fiterReset = document.getElementById("")
+let fiterReset = document.getElementById("");
 /* rangeValue.innerHTML = range.value; */
 
 filterBtn.addEventListener("click", function () {
-  nuts.checked ? (nuts.value = false) : (nuts.value = false);
-  vegs.checked ? (vegs.value = true, nuts.value = false) : (vegs.value = false, nuts.value = " ");
+  vegs.checked
+    ? ((vegs.value = true), (nuts.value = false))
+    : ((vegs.value = false), (nuts.value = " "));
+  nuts.checked ? (nuts.value = false) : (nuts.value = "");
   range.value !== -1 ? (spiciness = range.value) : (spiciness = "");
   cardDiv.innerHTML = " ";
   fetch(
@@ -109,42 +113,42 @@ filterBtn.addEventListener("click", function () {
     );
 });
 
-range.oninput = function() {
+range.oninput = function () {
   rangeValue.innerHTML = this.value;
-}
+};
 
 ///add to basket
 
 function addBasket(prodId, prodPrice, prodName) {
-let basketVar = {
-  quantity: 1,
-  price: prodPrice,
-  productId: prodId,
-}
+  let basketVar = {
+    quantity: 1,
+    price: prodPrice,
+    productId: prodId,
+  };
   fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
     method: "POST",
     headers: {
-      accept: 'text/plain',
-      'Content-Type': 'application/json'
+      accept: "text/plain",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(basketVar)
+    body: JSON.stringify(basketVar),
   })
-  .then(bask => bask.text())
-  .then(basketData => {
-    localStorage.setItem("baskedProd" , prodName)
-  })
+    .then((bask) => bask.text())
+    .then((basketData) => {
+      localStorage.setItem("baskedProd", prodName);
+    });
 }
 
 //burger
-let b1 =document.getElementById("b1")
-let b2 =document.getElementById("b2")
-let b3 =document.getElementById("b3")
+let b1 = document.getElementById("b1");
+let b2 = document.getElementById("b2");
+let b3 = document.getElementById("b3");
 let burgerDiv = document.getElementById("burgerDiv");
 let burgerBar = document.getElementById("burgerBar");
 
-burgerBar.addEventListener("click", function() {
-  burgerDiv.classList.toggle("burgerDisplay")
-  b1.classList.toggle("b1rotate")
-  b2.classList.toggle("b2rotate")
-  b3.classList.toggle("b3rotate")
-})
+burgerBar.addEventListener("click", function () {
+  burgerDiv.classList.toggle("burgerDisplay");
+  b1.classList.toggle("b1rotate");
+  b2.classList.toggle("b2rotate");
+  b3.classList.toggle("b3rotate");
+});

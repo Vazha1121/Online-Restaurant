@@ -257,13 +257,20 @@
         border: none;
       }
       button {
-        color: red;
+        color: rgb(0, 0, 0);
         font-size: 25px;
         background-color: inherit;
         border: none;
         display: flex;
         align-items: center;
         justify-content: center;
+        i{
+          font-size: 20px;
+        }
+      }
+      button:hover{
+        transform: scale(1.2);
+        color: red;
       }
     }
   }

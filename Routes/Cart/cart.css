@@ -260,13 +260,20 @@
   border: none;
 }
 #basketSec .table #rows button {
-  color: red;
+  color: rgb(0, 0, 0);
   font-size: 25px;
   background-color: inherit;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#basketSec .table #rows button i {
+  font-size: 20px;
+}
+#basketSec .table #rows button:hover {
+  transform: scale(1.2);
+  color: red;
 }
 #basketSec #table2 {
   max-width: 2000px;

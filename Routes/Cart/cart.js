@@ -36,9 +36,9 @@ function basketCards(item) {
             <td class="nameTd">${item.product.name}</td>
             <td class="plusBtnClass"><button class="plusBtn" onclick="plus(${item.quantity}, ${item.price}, ${
     item.product.id
-  })">+</button> ${item.quantity}<button class="plusBtn" onclick="minus(${item.quantity}, ${
+  })">+</button> ${item.quantity}<button class="minusBtn" onclick="minus(${item.quantity}, ${
     item.price
-  },${item.product.id})">-</button></td>
+  },${item.product.id})"><i class="fa-solid fa-minus"></i></button></td>
             <td>${item.price}$</td>
             <td class="priceTr">${item.price * item.quantity}$</td>
          </tr>
