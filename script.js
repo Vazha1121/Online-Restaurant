@@ -6,7 +6,7 @@ let body = document.querySelector("body");
 function scrollFunction() {
   if (
     document.documentElement.scrollTop >= 100 &&
-    document.documentElement.scrollTop <= 14000
+    document.documentElement.scrollTop <= 24000
   ) {
     scrolled.classList.add("scrolled");
   } else {
@@ -33,7 +33,7 @@ fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
   );
 
 function categoryFunc(item) {
-  return `<li onclick="getCategory(${item.id})">${item.name}</li>`;
+  return `<li onclick="getCategory(${item.id})"><button class="itemBtn">${item.name}</button></li>`;
 }
 
 /*cards */
@@ -94,7 +94,7 @@ let fiterReset = document.getElementById("")
 /* rangeValue.innerHTML = range.value; */
 
 filterBtn.addEventListener("click", function () {
-  nuts.checked ? (nuts.value = false) : (nuts.value = " ");
+  nuts.checked ? (nuts.value = false) : (nuts.value = false);
   vegs.checked ? (vegs.value = true, nuts.value = false) : (vegs.value = false, nuts.value = " ");
   range.value !== -1 ? (spiciness = range.value) : (spiciness = "");
   cardDiv.innerHTML = " ";

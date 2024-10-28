@@ -7,7 +7,7 @@ let tBody = document.getElementById("rows");
 function scrollFunction() {
   if (
     document.documentElement.scrollTop >= 10 &&
-    document.documentElement.scrollTop <= 14000
+    document.documentElement.scrollTop <= 24000
   ) {
     scrolled.classList.add("scrolled");
   } else {
